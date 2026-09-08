@@ -20,10 +20,10 @@ browser_settings:
 email:
   smtp_server: smtp.gmail.com
   smtp_port: 587
-  sender_email: pavanatejavemuri2007@gmail.com
-  sender_password: yopy txin rmkr ence
-  recipient_email: pavanatejavemuri2007@gmail.com
-  send_digest: true
+  sender_email: ''
+  sender_password: ''
+  recipient_email: ''
+  send_digest: false
 rapidapi:
   api_key: ''
   api_host: jsearch.p.rapidapi.com

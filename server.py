@@ -72,11 +72,25 @@ def load_config_raw() -> Dict[str, Any]:
         with open(CONFIG_PATH, "r", encoding="utf-8") as f:
             loaded = yaml.safe_load(f)
             if isinstance(loaded, dict):
-                # Deep merge email dictionary so sender credentials are never lost
+                # Deep merge email dictionary
                 if "email" in loaded and isinstance(loaded["email"], dict):
                     merged_email = default_cfg["email"].copy()
                     merged_email.update(loaded["email"])
                     loaded["email"] = merged_email
+                else:
+                    loaded["email"] = default_cfg["email"]
+
+                # Allow environment variables to override sensitive email credentials
+                email_cfg = loaded["email"]
+                if os.environ.get("SENDER_EMAIL"):
+                    email_cfg["sender_email"] = os.environ["SENDER_EMAIL"]
+                if os.environ.get("SENDER_PASSWORD"):
+                    email_cfg["sender_password"] = os.environ["SENDER_PASSWORD"]
+                if os.environ.get("RECIPIENT_EMAIL"):
+                    email_cfg["recipient_email"] = os.environ["RECIPIENT_EMAIL"]
+                if os.environ.get("SEND_DIGEST"):
+                    email_cfg["send_digest"] = os.environ["SEND_DIGEST"].lower() in ("true", "1", "yes")
+
                 return loaded
             return default_cfg
     except Exception as e:
