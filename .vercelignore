@@ -1,0 +1,25 @@
+# Virtual environments
+.venv/
+venv/
+env/
+.env/
+
+# Python cache & artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Git & GitHub
+.git/
+.github/
+.gitignore
+
+# Extension & documentation
+extension/
+*.md
+
+# Local data & logs
+*.log
+scratch/
