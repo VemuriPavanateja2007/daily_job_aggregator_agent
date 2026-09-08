@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Job Target & Alert Digest Assistant",
+  "version": "1.0.0",
+  "description": "Specify target job roles, clip listings directly from web pages, dispatch email digests, and track applications.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://localhost:8000/*",
+    "http://127.0.0.1:8000/*",
+    "*://*.linkedin.com/*",
+    "*://*.naukri.com/*",
+    "*://*.glassdoor.com/*",
+    "*://*.indeed.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Job Target & Alert Digest"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.linkedin.com/*",
+        "*://*.naukri.com/*",
+        "*://*.glassdoor.com/*",
+        "*://*.indeed.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}

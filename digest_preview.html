@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Job Digest</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #1e293b;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .header {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+            color: #ffffff;
+            padding: 32px 24px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0 0 8px 0;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+        .header p {
+            margin: 0;
+            color: #c7d2fe;
+            font-size: 14px;
+        }
+        .stats-bar {
+            background: #eef2ff;
+            padding: 12px 24px;
+            border-bottom: 1px solid #e0e7ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #3730a3;
+            font-weight: 600;
+        }
+        .content {
+            padding: 24px;
+        }
+        .job-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 18px;
+            margin-bottom: 16px;
+            background-color: #ffffff;
+            transition: border-color 0.2s ease;
+        }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        .job-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #0f172a;
+            margin: 0 0 4px 0;
+        }
+        .company-name {
+            font-size: 14px;
+            color: #475569;
+            font-weight: 500;
+            margin: 0 0 12px 0;
+        }
+        .meta-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+            font-size: 12px;
+        }
+        .badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .badge-source {
+            background-color: #e0f2fe;
+            color: #0369a1;
+        }
+        .badge-linkedin { background-color: #dbeafe; color: #1e40af; }
+        .badge-naukri { background-color: #ffedd5; color: #c2410c; }
+        .badge-glassdoor { background-color: #dcfce7; color: #15803d; }
+        .badge-location { background-color: #f1f5f9; color: #475569; }
+        .badge-time { background-color: #fef3c7; color: #92400e; }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #4338ca;
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .footer {
+            background-color: #f8fafc;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #94a3b8;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Daily Job Digest</h1>
+            <p>Target Roles: Machine Learning Engineer, Data Scientist, AI Engineer</p>
+        </div>
+
+        <div class="stats-bar">
+            <span>📅 Digest Date: September 08, 2026</span>
+            <span>🎯 Total Opportunities: 3</span>
+        </div>
+
+        <div class="content">
+            
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <h2 class="job-title">Senior Machine Learning Engineer</h2>
+                            <div class="company-name">🏢 DeepTech Innovations</div>
+                        </div>
+                    </div>
+
+                    <div class="meta-tags">
+                        <span class="badge badge-location">📍 Remote</span>
+                        
+                            <span class="badge badge-linkedin">🔗 LinkedIn</span>
+                        
+                        <span class="badge badge-time">🕒 2 hours ago</span>
+                    </div>
+
+                    <a href="https://www.linkedin.com/jobs/view/1001" target="_blank" class="cta-button">Apply Directly &rarr;</a>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <h2 class="job-title">Data Scientist - Generative AI</h2>
+                            <div class="company-name">🏢 AnalyticsCorp Labs</div>
+                        </div>
+                    </div>
+
+                    <div class="meta-tags">
+                        <span class="badge badge-location">📍 Bangalore, India</span>
+                        
+                            <span class="badge badge-naukri">⚡ Naukri</span>
+                        
+                        <span class="badge badge-time">🕒 4 hours ago</span>
+                    </div>
+
+                    <a href="https://www.naukri.com/job-listings-1002" target="_blank" class="cta-button">Apply Directly &rarr;</a>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <div>
+                            <h2 class="job-title">Full Stack AI Engineer</h2>
+                            <div class="company-name">🏢 NextGen Systems</div>
+                        </div>
+                    </div>
+
+                    <div class="meta-tags">
+                        <span class="badge badge-location">📍 Remote</span>
+                        
+                            <span class="badge badge-glassdoor">🟢 Glassdoor</span>
+                        
+                        <span class="badge badge-time">🕒 5 hours ago</span>
+                    </div>
+
+                    <a href="https://www.glassdoor.com/job-listing/1003" target="_blank" class="cta-button">Apply Directly &rarr;</a>
+                </div>
+                
+            
+        </div>
+
+        <div class="footer">
+            <p>Automated with Pythonic <code>import antigravity</code> philosophy ✨</p>
+        </div>
+    </div>
+</body>
+</html>

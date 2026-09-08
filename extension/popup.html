@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Target & Alert Assistant</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="brand-icon">🚀</div>
+        <div>
+          <h2>Job Alert Assistant</h2>
+          <span class="version">v1.0 • Extension</span>
+        </div>
+      </div>
+      <div class="status-pill" id="server-status">
+        <span class="dot offline"></span>
+        <span id="status-text">Connecting...</span>
+      </div>
+    </header>
+
+    <!-- Roles Section -->
+    <section class="card">
+      <div class="card-header">
+        <h3>🎯 Target Roles</h3>
+        <span class="badge" id="role-count">0 active</span>
+      </div>
+      <p class="subtitle">What job roles are you looking for?</p>
+      
+      <div class="role-input-group">
+        <input type="text" id="new-role-input" placeholder="e.g. Machine Learning Engineer...">
+        <button id="add-role-btn" class="btn-primary">+</button>
+      </div>
+
+      <div class="tags-container" id="roles-tags-list">
+        <span class="placeholder-text">Loading roles...</span>
+      </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="card actions-card">
+      <h3>⚡ Quick Actions</h3>
+      <div class="button-stack">
+        <button id="trigger-mail-btn" class="btn-action btn-mail">
+          <span class="icon">✉️</span>
+          <span>Send Email Digest Now</span>
+        </button>
+        <button id="clip-job-btn" class="btn-action btn-clip">
+          <span class="icon">📌</span>
+          <span>Clip Current Web Page Job</span>
+        </button>
+      </div>
+      <div id="action-feedback" class="feedback-msg hidden"></div>
+    </section>
+
+    <!-- App Stats & Status -->
+    <section class="card stats-card">
+      <div class="stat-row">
+        <span>Fresh Jobs Found:</span>
+        <strong id="stat-total-jobs">--</strong>
+      </div>
+      <div class="stat-row">
+        <span>Email Digest Status:</span>
+        <label class="switch">
+          <input type="checkbox" id="email-toggle">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div class="stat-row">
+        <span>Last Digest Sent:</span>
+        <span id="stat-last-digest" class="time-text">--</span>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <button id="open-dashboard-btn" class="btn-dashboard">
+        <span>🌐 Open Web Dashboard</span>
+        <span class="arrow">↗</span>
+      </button>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

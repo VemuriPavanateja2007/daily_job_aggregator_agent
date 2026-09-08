@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Job Digest Studio • Intelligent Job Aggregator</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+  <!-- Background Glow FX -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+
+  <div class="app-container">
+    <!-- Top Header -->
+    <header class="top-header glass-card">
+      <div class="header-brand">
+        <div class="brand-logo">
+          <span class="logo-icon">🚀</span>
+        </div>
+        <div>
+          <h1 class="brand-name">Job Digest Studio</h1>
+          <p class="brand-tagline">AI Automated Job Scraper & Daily Digest Dispatcher</p>
+        </div>
+      </div>
+
+      <!-- User Profile Badge / Status -->
+      <div class="header-right">
+        <div id="backend-status-pill" class="status-pill online">
+          <span class="pulse-dot"></span>
+          <span id="backend-status-text">Backend Connected</span>
+        </div>
+
+        <div id="user-profile-pill" class="user-pill hidden">
+          <div class="avatar-circle" id="user-avatar-initial">U</div>
+          <div class="user-info">
+            <span class="user-name" id="user-display-name">Developer</span>
+            <span class="user-email" id="user-display-email">user@example.com</span>
+          </div>
+          <button id="btn-logout" class="btn-icon-only" title="Sign Out">🚪</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- 4-Step Progress Wizard Navigation Header -->
+    <nav class="wizard-nav glass-card" id="wizard-nav-bar">
+      <div class="wizard-track">
+        <div class="wizard-step active" data-step="1" id="step-node-1">
+          <div class="step-badge">1</div>
+          <div class="step-label-group">
+            <span class="step-title">Login</span>
+            <span class="step-sub">User Authentication</span>
+          </div>
+        </div>
+        <div class="wizard-connector"></div>
+
+        <div class="wizard-step" data-step="2" id="step-node-2">
+          <div class="step-badge">2</div>
+          <div class="step-label-group">
+            <span class="step-title">Target Roles</span>
+            <span class="step-sub">Select Preferences</span>
+          </div>
+        </div>
+        <div class="wizard-connector"></div>
+
+        <div class="wizard-step" data-step="3" id="step-node-3">
+          <div class="step-badge">3</div>
+          <div class="step-label-group">
+            <span class="step-title">Job Search</span>
+            <span class="step-sub">Aggregate Postings</span>
+          </div>
+        </div>
+        <div class="wizard-connector"></div>
+
+        <div class="wizard-step" data-step="4" id="step-node-4">
+          <div class="step-badge">4</div>
+          <div class="step-label-group">
+            <span class="step-title">Send Email</span>
+            <span class="step-sub">Dispatch Digest Report</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN WORKFLOW PANE CONTENT -->
+    <main class="main-stage">
+
+      <!-- ============================================================ -->
+      <!-- STEP 1: LOGIN SCREEN -->
+      <!-- ============================================================ -->
+      <section id="pane-step-1" class="step-pane active">
+        <div class="auth-wrapper">
+          <div class="auth-card glass-card glowing-border">
+            <div class="auth-header">
+              <div class="auth-icon-badge">🔑</div>
+              <h2>Sign In to Job Digest Studio</h2>
+              <p>Enter your credentials to manage targeted job roles, scrape top platforms, and dispatch custom digests.</p>
+            </div>
+
+            <form id="login-form" class="auth-form">
+              <div class="form-group">
+                <label for="login-email">Email Address or Username</label>
+                <div class="input-with-icon">
+                  <span class="input-icon">✉️</span>
+                  <input type="email" id="login-email" placeholder="e.g. developer@company.com" required value="pavanateja@example.com">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="login-password">Password</label>
+                <div class="input-with-icon">
+                  <span class="input-icon">🔒</span>
+                  <input type="password" id="login-password" placeholder="••••••••••••" required value="demo1234">
+                </div>
+              </div>
+
+              <div class="form-options">
+                <label class="checkbox-container">
+                  <input type="checkbox" id="remember-me" checked>
+                  <span class="checkmark"></span>
+                  Remember session
+                </label>
+                <a href="#" class="forgot-link" id="btn-forgot-password">Forgot password?</a>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block btn-lg">
+                <span>Sign In & Continue</span>
+                <span class="btn-arrow">→</span>
+              </button>
+
+              <div class="divider">
+                <span>OR QUICK SIGN IN</span>
+              </div>
+
+              <button type="button" id="btn-quick-login" class="btn btn-secondary btn-block">
+                <span class="btn-icon">⚡</span>
+                <span>Quick Demo Login (Candidate Mode)</span>
+              </button>
+            </form>
+          </div>
+
+          <div class="auth-footer-notes">
+            <p>🔒 End-to-end local session encryption • Real-time job scraping & alert studio</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- STEP 2: SELECT JOB ROLES & PREFERENCES -->
+      <!-- ============================================================ -->
+      <section id="pane-step-2" class="step-pane">
+        <div class="pane-content-box">
+          <div class="section-intro">
+            <span class="section-tag">Step 2 of 4</span>
+            <h2>🎯 Which Job Roles Do You Want?</h2>
+            <p>Choose predefined target job titles or enter custom roles to tailor your automated daily scraper feed.</p>
+          </div>
+
+          <div class="glass-card panel-card">
+            <div class="card-section-title">
+              <h3>Popular Tech & Engineering Roles</h3>
+              <p>Click chips to select or toggle target roles for your digest.</p>
+            </div>
+
+            <!-- Quick Selection Chips Grid -->
+            <div class="role-chips-grid" id="preset-roles-grid">
+              <button class="role-chip" data-role="All Roles">
+                <span class="chip-check">+</span> ✨ All Roles (Select All)
+              </button>
+              <button class="role-chip active" data-role="Machine Learning Engineer">
+                <span class="chip-check">✓</span> Machine Learning Engineer
+              </button>
+              <button class="role-chip active" data-role="Data Scientist">
+                <span class="chip-check">✓</span> Data Scientist
+              </button>
+              <button class="role-chip active" data-role="Software Engineer">
+                <span class="chip-check">✓</span> Software Engineer
+              </button>
+              <button class="role-chip" data-role="Full Stack Developer">
+                <span class="chip-check">+</span> Full Stack Developer
+              </button>
+              <button class="role-chip" data-role="Python Backend Engineer">
+                <span class="chip-check">+</span> Python Backend Engineer
+              </button>
+              <button class="role-chip" data-role="Frontend React Developer">
+                <span class="chip-check">+</span> Frontend React Developer
+              </button>
+              <button class="role-chip" data-role="DevOps & SRE">
+                <span class="chip-check">+</span> DevOps & SRE
+              </button>
+              <button class="role-chip" data-role="Data Engineer">
+                <span class="chip-check">+</span> Data Engineer
+              </button>
+              <button class="role-chip" data-role="Cloud Solutions Architect">
+                <span class="chip-check">+</span> Cloud Solutions Architect
+              </button>
+              <button class="role-chip" data-role="Cybersecurity Lead">
+                <span class="chip-check">+</span> Cybersecurity Lead
+              </button>
+              <button class="role-chip" data-role="Product Manager">
+                <span class="chip-check">+</span> Product Manager
+              </button>
+              <button class="role-chip" data-role="Mobile App Developer">
+                <span class="chip-check">+</span> Mobile App Developer
+              </button>
+              <button class="role-chip" data-role="AI Prompt Engineer">
+                <span class="chip-check">+</span> AI Prompt Engineer
+              </button>
+              <button class="role-chip" data-role="QA Automation">
+                <span class="chip-check">+</span> QA Automation
+              </button>
+            </div>
+
+            <div class="card-divider"></div>
+
+            <!-- Custom Role Input -->
+            <div class="form-group margin-top">
+              <label for="custom-role-input">Add Custom Role Tag</label>
+              <div class="input-action-group">
+                <input type="text" id="custom-role-input" placeholder="e.g. LLM Prompt Engineer, Cyber Security Lead...">
+                <button type="button" id="btn-add-custom-role" class="btn btn-secondary">
+                  <span>+ Add Role</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Active Selected Roles Pills Container -->
+            <div class="active-roles-wrapper">
+              <span class="label-tiny">Your Currently Selected Target Roles (<span id="selected-roles-count">3</span>):</span>
+              <div class="roles-pill-container" id="selected-roles-pills">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+            <div class="card-divider"></div>
+
+            <!-- Additional Filters: Location & Platforms -->
+            <div class="grid-2col">
+              <div class="form-group">
+                <label>Preferred Locations</label>
+                <div class="location-tags" id="location-tags-container">
+                  <label class="tag-checkbox">
+                    <input type="checkbox" value="Remote" checked>
+                    <span>🌐 Remote</span>
+                  </label>
+                  <label class="tag-checkbox">
+                    <input type="checkbox" value="India" checked>
+                    <span>🇮🇳 India</span>
+                  </label>
+                  <label class="tag-checkbox">
+                    <input type="checkbox" value="USA">
+                    <span>🇺🇸 USA</span>
+                  </label>
+                  <label class="tag-checkbox">
+                    <input type="checkbox" value="Hybrid">
+                    <span>🏢 Hybrid</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Target Job Platforms</label>
+                <div class="platform-checkboxes">
+                  <label class="platform-toggle">
+                    <input type="checkbox" id="plat-linkedin" checked>
+                    <span class="plat-badge linkedin">LinkedIn</span>
+                  </label>
+                  <label class="platform-toggle">
+                    <input type="checkbox" id="plat-naukri" checked>
+                    <span class="plat-badge naukri">Naukri</span>
+                  </label>
+                  <label class="platform-toggle">
+                    <input type="checkbox" id="plat-glassdoor" checked>
+                    <span class="plat-badge glassdoor">Glassdoor</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="step-action-bar">
+              <button type="button" class="btn btn-secondary btn-prev-step" data-target="1">
+                <span>← Back to Login</span>
+              </button>
+              <button type="button" id="btn-save-roles-and-search" class="btn btn-primary btn-lg glow-pulse">
+                <span>🔍 Search Jobs For Selected Roles</span>
+                <span class="btn-arrow">→</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- STEP 3: SEARCH & DISPLAY JOB RESULTS -->
+      <!-- ============================================================ -->
+      <section id="pane-step-3" class="step-pane">
+        <div class="pane-content-box">
+          <div class="section-intro-row">
+            <div>
+              <span class="section-tag">Step 3 of 4</span>
+              <h2>🔍 Aggregated Job Search Results</h2>
+              <p class="sub-text">Showing recent postings matching your selected roles across LinkedIn, Naukri & Glassdoor.</p>
+            </div>
+            <div class="header-action-buttons">
+              <button id="btn-run-pipeline-fresh" class="btn btn-secondary">
+                <span class="btn-icon">⚡</span>
+                <span>Trigger Live Web Scraper</span>
+              </button>
+              <button id="btn-proceed-to-email" class="btn btn-primary">
+                <span>✉️ Next: Send Email Digest</span>
+                <span class="btn-arrow">→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- KPI Summary Strip -->
+          <div class="kpi-strip">
+            <div class="kpi-mini-card">
+              <span class="kpi-mini-val" id="kpi-search-count">0</span>
+              <span class="kpi-mini-lbl">Matched Jobs</span>
+            </div>
+            <div class="kpi-mini-card">
+              <span class="kpi-mini-val" id="kpi-active-roles-count">0</span>
+              <span class="kpi-mini-lbl">Target Roles</span>
+            </div>
+            <div class="kpi-mini-card">
+              <span class="kpi-mini-val" id="kpi-saved-jobs-count">0</span>
+              <span class="kpi-mini-lbl">Saved / Bookmarked</span>
+            </div>
+          </div>
+
+          <!-- Search & Filter Controls Panel -->
+          <div class="glass-card search-filter-card">
+            <div class="search-input-wrapper">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="jobs-search-query" placeholder="Filter matching jobs by title, company, technology, or location...">
+            </div>
+            <div class="filter-dropdowns">
+              <select id="select-role-filter">
+                <option value="all">All Selected Roles</option>
+              </select>
+              <select id="select-platform-filter">
+                <option value="all">All Sources</option>
+                <option value="linkedin">LinkedIn</option>
+                <option value="naukri">Naukri</option>
+                <option value="glassdoor">Glassdoor</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Job Cards Feed Grid -->
+          <div id="jobs-cards-grid" class="jobs-grid-layout">
+            <div class="loading-state glass-card">
+              <div class="spinner-ring"></div>
+              <p>Fetching aggregated job postings...</p>
+            </div>
+          </div>
+
+          <!-- Bottom Action Navigation -->
+          <div class="step-action-bar flex-end margin-top">
+            <button type="button" class="btn btn-secondary btn-prev-step" data-target="2">
+              <span>← Modify Job Roles</span>
+            </button>
+            <button type="button" id="btn-goto-step-4" class="btn btn-primary btn-lg">
+              <span>✉️ Continue to Send Email Digest</span>
+              <span class="btn-arrow">→</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- STEP 4: ASK EMAIL ID & SEND MAIL -->
+      <!-- ============================================================ -->
+      <section id="pane-step-4" class="step-pane">
+        <div class="pane-content-box max-width-800">
+          <div class="section-intro align-center">
+            <span class="section-tag">Step 4 of 4</span>
+            <h2>✉️ Send Daily Job Digest Email</h2>
+            <p>Specify the target Email Address to send your custom curated job report with top matches and application links.</p>
+          </div>
+
+          <div class="glass-card panel-card glowing-border">
+            <form id="email-dispatch-form">
+              <div class="form-group">
+                <label for="recipient-email-input">Recipient Email Address</label>
+                <div class="input-with-icon">
+                  <span class="input-icon">📧</span>
+                  <input type="email" id="recipient-email-input" placeholder="e.g. candidate@domain.com" required value="pavanateja@example.com">
+                </div>
+                <span class="field-hint">We will dispatch the complete HTML digest containing matching jobs to this email.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="email-subject-input">Email Subject Line</label>
+                <div class="input-with-icon">
+                  <span class="input-icon">📝</span>
+                  <input type="text" id="email-subject-input" value="🚀 Daily Job Digest - Top Target Role Matches">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="checkbox-container">
+                  <input type="checkbox" id="enable-smtp-toggle">
+                  <span class="checkmark"></span>
+                  Enable Direct SMTP Dispatch (If SMTP login credentials are configured in server)
+                </label>
+              </div>
+
+              <!-- Dispatch Action Button -->
+              <button type="submit" id="btn-send-mail-now" class="btn btn-primary btn-block btn-lg glow-pulse">
+                <span class="btn-icon">🚀</span>
+                <span>Send Job Digest Email Now</span>
+              </button>
+            </form>
+
+            <div class="card-divider"></div>
+
+            <!-- Email Dispatch Result Status Card -->
+            <div id="email-result-card" class="dispatch-result-card hidden">
+              <div class="result-header">
+                <span class="status-icon green">✅</span>
+                <div>
+                  <h3 id="result-status-title">Job Digest Dispatched Successfully!</h3>
+                  <p id="result-status-desc">Your daily job digest report has been generated and queued.</p>
+                </div>
+              </div>
+
+              <div class="result-details-grid">
+                <div class="detail-item">
+                  <span class="detail-label">Recipient Email</span>
+                  <span class="detail-val" id="res-recipient-email">user@example.com</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Total Jobs Included</span>
+                  <span class="detail-val" id="res-jobs-count">0 postings</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Sent Timestamp</span>
+                  <span class="detail-val" id="res-timestamp">Just now</span>
+                </div>
+                <div class="detail-item">
+                  <span class="detail-label">Transmission Mode</span>
+                  <span class="detail-val" id="res-mode">Dispatched / Local HTML Preview</span>
+                </div>
+              </div>
+
+              <div class="result-actions">
+                <button type="button" id="btn-open-preview-modal" class="btn btn-secondary">
+                  <span class="btn-icon">👁️</span>
+                  <span>Preview Generated Email Digest HTML</span>
+                </button>
+                <a href="/api/digest-preview" target="_blank" class="btn btn-primary">
+                  <span class="btn-icon">↗️</span>
+                  <span>Open HTML Digest in New Tab</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="step-action-bar margin-top">
+              <button type="button" class="btn btn-secondary btn-prev-step" data-target="3">
+                <span>← Back to Job Listings</span>
+              </button>
+              <button type="button" id="btn-restart-workflow" class="btn btn-secondary">
+                <span>🔄 Start New Role Search</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- EMAIL HTML PREVIEW MODAL DIALOG -->
+  <div id="modal-email-preview" class="modal-overlay hidden">
+    <div class="modal-container glass-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span>✉️ Email Digest HTML Live Preview</span>
+        </div>
+        <button id="btn-close-modal" class="btn-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="iframe-email-preview" src="/api/digest-preview" title="Email Digest Preview"></iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="/api/digest-preview" target="_blank" class="btn btn-secondary">Open full screen tab ↗</a>
+        <button id="btn-modal-done" class="btn btn-primary">Close Preview</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
